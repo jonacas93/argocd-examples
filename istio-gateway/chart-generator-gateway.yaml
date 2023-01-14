@@ -1,0 +1,11 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: "istio-ingressgateway"
+name: "gateway"
+repo: https://istio-release.storage.googleapis.com/charts
+releaseName: "istio-ingressgateway"
+namespace: "istio-ingress"
+IncludeCRDs: true
+#override with these custom values
+valuesFile: gateway-values.yaml
