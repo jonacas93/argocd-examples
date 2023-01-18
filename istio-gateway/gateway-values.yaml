@@ -58,15 +58,14 @@ service:
     port: 443
     protocol: TCP
     targetPort: 443
-  annotations: {
-    service.beta.kubernetes.io/aws-load-balancer-internal: "true",
-    service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0a130f80f0a8832a7, subnet-05fb5113da0ad4c35, subnet-08d2e9c3202f0b619, subnet-0ccfce2a0496ad765",
-    service.beta.kubernetes.io/aws-load-balancer-type: "nlb",
-    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: "arn:aws:acm:us-east-1:651644924182:certificate/251c9793-13cd-464b-91dd-d0c4398ae8fe",
-    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "https, 5000-port, 8000-port",
+  annotations: 
+    # service.beta.kubernetes.io/aws-load-balancer-internal: "true"
+    service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0a130f80f0a8832a7, subnet-05fb5113da0ad4c35, subnet-08d2e9c3202f0b619, subnet-0ccfce2a0496ad765"
+    service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: "arn:aws:acm:us-east-1:651644924182:certificate/251c9793-13cd-464b-91dd-d0c4398ae8fe"
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: 443, 5000, 8000
     #service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: "*",
     service.beta.kubernetes.io/aws-load-balancer-healthcheck-interval: "300"
-  }
   loadBalancerIP: ""
   loadBalancerSourceRanges: []
   externalTrafficPolicy: ""
